@@ -14,7 +14,7 @@ const store=createStore(reducer, composeEnhancers(
   applyMiddleware(thunk)
 ));
 
-
+console.log("alle")
 // console.log(store.getState());
 const app=(
   <Provider store={store}>
