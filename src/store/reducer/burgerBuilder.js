@@ -5,6 +5,7 @@ const Initialstate = {
     ingredients:null,
     totalPrice:50,
     error:false
+    // loading:false
 }
 
 const INGREDIENTS_PRICE={
@@ -39,7 +40,13 @@ const reducer=(state= Initialstate, action)=>{
         case actionTypes.SET_INGREDIENT:{
             return{
                 ...state,
-                ingredients:action.ingredients,
+                ingredients:{
+                    salad:action.ingredients.salad,
+                    bacon:action.ingredients.bacon,
+                    cheese:action.ingredients.cheese,
+                    meat:action.ingredients.meat
+                },
+                totalPrice: 50,
                 error:false
             }
         }    
@@ -49,7 +56,6 @@ const reducer=(state= Initialstate, action)=>{
                 error: true
             }
         }
-
         default:
             return state;    
     }
