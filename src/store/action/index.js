@@ -5,4 +5,4 @@ export {addIngredient,
 
 export {purhaseBurgerStart, purchaseInit, orderFetch} from './order';
 
-export {auth} from './auth';
+export {auth, logout, authRedirectPathset} from './auth';
