@@ -2,6 +2,7 @@ import * as actionTypes from './actionTypes';
 import axios from '../../axios-order';
 // import order from '../../components/Order/order';
 
+
 export const purchaseBurgerSuccess =(id, orderData)=>{
     return{
         type:actionTypes.PURCHASE_BURGER_SUCCESS,
@@ -44,4 +45,45 @@ export const purhaseBurgerStart = (orderData)=>{
             }
             )
     }
+}
+
+export const orderFetchSuccess = (orders)=>{
+    return {
+        type:actionTypes.ORDER_FETCH_SUCCESS,
+        orders:orders
+    }
+}
+
+export const orderFetchFail = (error)=>{
+    return{
+        type:actionTypes.ORDER_FETCH_FAIL,
+        error:error
+    }
+}
+export const orderFetchStart = () => {
+    return{
+        type:actionTypes.ORDER_FETCH_START
+    }
+}
+export const orderFetch = ()=>{
+    return dispatch=>{
+        dispatch(orderFetchStart())
+        axios.get('/orders.json')
+        .then(res=>{
+            const fetchOrder = [];
+            for(let key in res.data){
+                fetchOrder.push({
+                    ...res.data[key],
+                    id:key})
+            }
+            dispatch(orderFetchSuccess(fetchOrder))
+            // this.setState({loading:false, orders:fetchOrder})
+        })
+        .catch(err=>{
+            // this.setState({loading:false})
+            dispatch(orderFetchFail(err));
+        })
+    }
+       
+    
 }

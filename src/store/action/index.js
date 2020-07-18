@@ -3,4 +3,6 @@ export {addIngredient,
     initIngredient
 } from './burgerBuilder';
 
-export {purhaseBurgerStart, purchaseInit} from './order';
+export {purhaseBurgerStart, purchaseInit, orderFetch} from './order';
+
+export {auth} from './auth';
