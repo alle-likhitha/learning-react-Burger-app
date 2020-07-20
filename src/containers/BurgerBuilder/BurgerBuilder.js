@@ -17,7 +17,7 @@ import { connect } from 'react-redux';
 //         meat:40
 // };
 
-class BurgerBuilder extends Component{
+export class BurgerBuilder extends Component{
     
     
 
@@ -30,11 +30,11 @@ class BurgerBuilder extends Component{
     }
 
     componentDidMount(){
-        console.log(this.props)
+        // console.log(this.props)
         this.props.oninitIngredients()
     }
     componentDidUpdate(){
-        console.log('Burgerbulider'+this.props.ings)
+        // console.log('Burgerbulider'+this.props.ings)
     }
 
     purchaseHandler = (ingredients) =>{

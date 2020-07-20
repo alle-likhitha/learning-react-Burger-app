@@ -4,7 +4,7 @@ import BurgerIngredient from './BurgerIngredients/BurgerIngredient';
 //import Aux from '../../hoc/aux'
 
 const burger =(props)=>{
-    console.log(props.ingredients)
+    // console.log(props.ingredients)
     let passedIngredients = Object.keys(props.ingredients)
     .map(igKey => {
         return [...Array(props.ingredients[igKey] )].map((_,i) => {
