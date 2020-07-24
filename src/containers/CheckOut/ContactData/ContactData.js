@@ -162,7 +162,8 @@ class ContactData extends Component{
            
         }
         let form =(
-            <form onSubmit={this.orderHandler}>
+            // <form onSubmit={this.orderHandler}>
+            <form>
                     {/* <Input elementType='...' elementConfig='..'  value='..'></Input> */}
                     
                     {formeleArray.map(formelement=>(
@@ -176,7 +177,7 @@ class ContactData extends Component{
                         invalid={!formelement.config.isValid} />
                     ))}
 
-                    <Button btntype='Success' disabled={!this.state.formisvalid}>Order</Button>
+                    <Button btntype='Success' disabled={!this.state.formisvalid}clicked={this.orderHandler}>Order</Button>
                 </form>
         )
         if(this.props.loading){

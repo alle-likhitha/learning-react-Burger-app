@@ -21,6 +21,7 @@ const order =(props)=>{
     })
     return(
         <div className={classes.Order }>
+        <p></p>
         <p>Ingredients : {ingOutput} </p>
         <p>Price: <strong>Rs {props.price}</strong></p>
         </div>
