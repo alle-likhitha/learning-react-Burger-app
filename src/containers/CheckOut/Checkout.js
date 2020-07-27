@@ -1,10 +1,10 @@
-import React ,{Component } from 'react';
+import React  from 'react';
 import CheckoutSummary from '../../components/Order/CheckoutSummary/CheckoutSummary';
 import ContactData from './ContactData/ContactData';
 import {Route, Redirect} from 'react-router-dom';
 import {connect } from 'react-redux'
 // import Spinner from '../../components/UI/Spinner/Spinner'
-class Checkout extends Component{
+const Checkout = props =>{
 
     // componentWillMount(){
     //     console.log('checkout:::'+this.props);
@@ -25,32 +25,30 @@ class Checkout extends Component{
     // }
 
 
-    cancelCheckHandler=()=>{
-        this.props.history.goBack();
-        console.log(this.props)
+    const cancelCheckHandler=()=>{
+        props.history.goBack();
+        console.log(props)
     }
 
-    continueCheckHandler=()=>{
-        this.props.history.replace('checkout/contact-data')
+    const continueCheckHandler=()=>{
+        props.history.replace('checkout/contact-data')
     }
-
-    render(){
         let summary = <Redirect to='/' />
-        if(this.props.ings){
-            const purchaseredirct = this.props.purchased ? <Redirect to='/' /> : null;
+        if(props.ings){
+            const purchaseredirct = props.purchased ? <Redirect to='/' /> : null;
             summary = (
             <div>
                 {purchaseredirct}
-                <CheckoutSummary ingredients={this.props.ings}
-                cancelCheckout={this.cancelCheckHandler}
-                continueCheckout={this.continueCheckHandler}/>
-                <Route path={this.props.match.path +'/contact-data'} 
+                <CheckoutSummary ingredients={props.ings}
+                cancelCheckout={cancelCheckHandler}
+                continueCheckout={continueCheckHandler}/>
+                <Route path={props.match.path +'/contact-data'} 
                     component={ContactData}/>
             </div>
             )
         }
         return summary;
-    }
+    
 }
 
 const mapStatetoProps = state =>{

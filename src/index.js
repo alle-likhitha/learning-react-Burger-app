@@ -32,7 +32,7 @@ segaMiddleware.run(watchOrder);
 // console.log(store.getState());
 const app=(
   <Provider store={store}>
-    <BrowserRouter basename='/BurgerLove'>
+    <BrowserRouter>
   <React.StrictMode>
     <App />
   </React.StrictMode>
