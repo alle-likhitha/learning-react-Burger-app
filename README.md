@@ -1,6 +1,6 @@
 ## Demo project (https://react-burger-love.firebaseapp.com/)
 
-# Please scroll down after clicking "Continue" in checkout page
+### Please scroll down after clicking "Continue" in checkout page
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
