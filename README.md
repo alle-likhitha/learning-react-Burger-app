@@ -1,4 +1,4 @@
-## Demo project (https://react-burger-love.firebaseapp.com/)
+## Demo project [CLICK HERE](https://react-burger-love.firebaseapp.com)
 
 ### Please scroll down after clicking "Continue" in checkout page
 
