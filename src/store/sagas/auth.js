@@ -28,9 +28,9 @@ export function* authuserSaga(action){
         password: action.password,
             returnSecureToken: true
         };
-        let url = 'https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=AIzaSyACKlPV_KsR5f4gC39wKYaYg9hwsPPwy4k';
+        let url = 'https://identitytoolkit.googleapis.com/v1/accounts:signUp?key='add ypur database key'';
         if(!action.isSignup){
-            url = 'https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=AIzaSyACKlPV_KsR5f4gC39wKYaYg9hwsPPwy4k';
+            url = 'https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key='add ypur database key'';
         }
         try{
         const response = yield axios.post(url, authData)
